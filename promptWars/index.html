@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CivicPulse — Your Vote. Your Voice. Your Future. | Voter Awareness Platform</title>
+  <meta name="description" content="A non-partisan civic awareness platform empowering citizens to understand the value of every vote, make informed decisions, and participate responsibly in elections.">
+  <meta name="keywords" content="voter awareness, responsible voting, civic duty, democracy, election participation, vote matters, citizen responsibility">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="CivicPulse — Your Vote. Your Voice. Your Future.">
+  <meta property="og:description" content="Discover why every vote counts, beat voter apathy, and take the responsible citizen pledge. Completely non-partisan civic platform.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Canvas Confetti Container -->
+  <canvas id="confetti-canvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="header-nav" id="header-nav">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo" aria-label="CivicPulse Homepage">
+        <div class="logo-icon-wrap">
+          <svg class="logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+            <path d="M9 9l3 3-3 3"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">CivicPulse</span>
+          <span class="brand-tagline">100% Non-Partisan</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#why-vote" class="nav-link">Why Vote</a></li>
+          <li><a href="#voter-journey" class="nav-link">Voter Journey</a></li>
+          <li><a href="#think-before" class="nav-link">Informed Voting</a></li>
+          <li><a href="#beat-apathy" class="nav-link">Beat Apathy</a></li>
+          <li><a href="#voter-quiz" class="nav-link">Awareness Quiz</a></li>
+          <li><a href="#civic-pledge" class="nav-link">Civic Pledge</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions (Theme Toggle & Pledge Button) -->
+      <div class="nav-actions">
+        <!-- Theme Switcher Button -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Toggle dark and light theme" title="Switch Theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- CTA Header Button -->
+        <a href="#civic-pledge" class="btn btn-sm btn-primary nav-cta">Take Civic Pledge</a>
+
+        <!-- Mobile Hamburger Menu Button -->
+        <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Open mobile menu" aria-expanded="false">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Navigation -->
+    <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+      <ul class="mobile-nav-links">
+        <li><a href="#why-vote" class="mobile-nav-link">Why Vote</a></li>
+        <li><a href="#voter-journey" class="mobile-nav-link">Voter Journey</a></li>
+        <li><a href="#think-before" class="mobile-nav-link">Informed Voting</a></li>
+        <li><a href="#beat-apathy" class="mobile-nav-link">Beat Apathy</a></li>
+        <li><a href="#voter-quiz" class="mobile-nav-link">Awareness Quiz</a></li>
+        <li><a href="#civic-pledge" class="mobile-nav-link">Civic Pledge</a></li>
+      </ul>
+      <div class="mobile-drawer-cta">
+        <a href="#civic-pledge" class="btn btn-primary btn-block">Take Civic Pledge</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- ================================================================= -->
+    <!-- 1. HERO SECTION: "Your Vote Matters"                             -->
+    <!-- ================================================================= -->
+    <section id="hero" class="hero-section">
+      <div class="hero-bg-glow glow-1" aria-hidden="true"></div>
+      <div class="hero-bg-glow glow-2" aria-hidden="true"></div>
+      <div class="hero-grid-pattern" aria-hidden="true"></div>
+
+      <div class="container hero-container">
+        <!-- Neutrality Banner Pill -->
+        <div class="badge-pill hero-badge" data-aos="fade-down">
+          <span class="badge-dot"></span>
+          <span>Non-Partisan Civic Initiative • Free & Open to All</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="hero-title" data-aos="fade-up">
+          Your Vote. <br>
+          <span class="text-gradient">Your Voice.</span> <br>
+          Your Future.
+        </h1>
+
+        <!-- Emotional & Neutral Subtitle -->
+        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+          Democracy isn’t a spectator sport—it thrives only when citizens like you participate. 
+          Casting your ballot is one of the most powerful, peaceful, and equal ways to shape your community, 
+          protect human rights, and build a brighter tomorrow for future generations.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero-cta-group" data-aos="fade-up" data-aos-delay="200">
+          <a href="#why-vote" class="btn btn-lg btn-primary btn-glow" id="hero-why-vote-btn">
+            <span>Why Should I Vote?</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <polyline points="19 12 12 19 5 12"></polyline>
+            </svg>
+          </a>
+          <a href="#voter-quiz" class="btn btn-lg btn-secondary" id="hero-take-quiz-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+              <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            <span>Test Your Civic IQ</span>
+          </a>
+        </div>
+
+        <!-- Quick Stats Cards (Highlighting Equal Voice) -->
+        <div class="hero-stat-cards" data-aos="fade-up" data-aos-delay="300">
+          <div class="stat-card">
+            <div class="stat-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Secret & Equal Ballot</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <span class="stat-number">Every</span>
+              <span class="stat-label">Eligible Citizen Counts</span>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon-wrapper">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 14 14"></polyline>
+              </svg>
+            </div>
+            <div class="stat-content">
+              <span class="stat-number">Direct</span>
+              <span class="stat-label">Impact on Daily Life</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Scroll Indicator -->
+        <div class="scroll-indicator" aria-hidden="true">
+          <a href="#why-vote" aria-label="Scroll to Why Vote section">
+            <span class="mouse-icon">
+              <span class="wheel-icon"></span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 2. WHY VOTING MATTERS                                            -->
+    <!-- ================================================================= -->
+    <section id="why-vote" class="section why-vote-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="badge-icon">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            <span>Core Civic Foundations</span>
+          </div>
+          <h2 class="section-title">Why Voting Matters in a Democracy</h2>
+          <p class="section-subtitle">
+            Voting is more than a constitutional right—it is the direct mechanism through which everyday people protect liberties, shape public policies, and guide the destiny of their neighborhoods.
+          </p>
+        </div>
+
+        <!-- 4 Modern Glass Cards -->
+        <div class="cards-grid why-cards-grid">
+          <!-- Card 1: Equal Voice in Democracy -->
+          <article class="glass-card hover-lift" tabindex="0">
+            <div class="card-icon-box bg-sapphire">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="23"></line>
+                <line x1="8" y1="23" x2="16" y2="23"></line>
+              </svg>
+            </div>
+            <h3 class="card-title">Equal Voice in Democracy</h3>
+            <p class="card-desc">
+              On election day, every citizen possesses the exact same voting power—regardless of background, income, or status. Your ballot is your equalizing superpower.
+            </p>
+            <div class="card-footer-pill">
+              <span class="pill-dot"></span>
+              <span>1 Person = 1 Equal Vote</span>
+            </div>
+          </article>
+
+          <!-- Card 2: Community & Local Impact -->
+          <article class="glass-card hover-lift" tabindex="0">
+            <div class="card-icon-box bg-cyan">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </div>
+            <h3 class="card-title">Direct Community Impact</h3>
+            <p class="card-desc">
+              Elections determine funding for public schools, clean drinking water, safe neighborhood roads, healthcare facilities, emergency services, and local parks.
+            </p>
+            <div class="card-footer-pill">
+              <span class="pill-dot"></span>
+              <span>Local Policies Touch Daily Life</span>
+            </div>
+          </article>
+
+          <!-- Card 3: Say in Public Decisions -->
+          <article class="glass-card hover-lift" tabindex="0">
+            <div class="card-icon-box bg-emerald">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="2" y1="12" x2="22" y2="12"></line>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+              </svg>
+            </div>
+            <h3 class="card-title">Say in Public Decisions</h3>
+            <p class="card-desc">
+              When you participate, leaders are held accountable to public priorities. When citizens stay silent, decisions are made by those who show up instead of the entire community.
+            </p>
+            <div class="card-footer-pill">
+              <span class="pill-dot"></span>
+              <span>Accountability & Transparency</span>
+            </div>
+          </article>
+
+          <!-- Card 4: Civic Duty & Future Legacy -->
+          <article class="glass-card hover-lift" tabindex="0">
+            <div class="card-icon-box bg-purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            <h3 class="card-title">Protecting Future Generations</h3>
+            <p class="card-desc">
+              Generations struggled to secure the universal right to vote. Participating honors that historic legacy and sets a powerful example of civic responsibility for our children.
+            </p>
+            <div class="card-footer-pill">
+              <span class="pill-dot"></span>
+              <span>Sustaining Free Society</span>
+            </div>
+          </article>
+        </div>
+
+        <!-- Civic Quote Box -->
+        <div class="civic-quote-banner glass-card mt-8">
+          <div class="quote-icon">“</div>
+          <p class="quote-text">
+            “Bad officials are elected by good citizens who do not vote.”
+          </p>
+          <span class="quote-author">— Civic Wisdom on the Power of Participation</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 3. WHAT HAPPENS WHEN YOU VOTE? (Interactive Voter Journey)        -->
+    <!-- ================================================================= -->
+    <section id="voter-journey" class="section voter-journey-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="badge-icon">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+            </svg>
+            <span>Step-by-Step Pathway</span>
+          </div>
+          <h2 class="section-title">What Happens When You Vote?</h2>
+          <p class="section-subtitle">
+            Follow the 5-step journey from curious learner to empowered voter. Click each milestone below to explore actionable insights and best practices.
+          </p>
+        </div>
+
+        <!-- Interactive Journey Stepper Navigation -->
+        <div class="journey-stepper-container">
+          <div class="journey-progress-track">
+            <div class="journey-progress-fill" id="journey-progress-fill" style="width: 20%;"></div>
+          </div>
+          
+          <div class="journey-step-buttons" role="tablist" aria-label="Voter Journey Steps">
+            <button class="journey-step-btn active" role="tab" aria-selected="true" data-step="0" id="step-btn-0">
+              <span class="step-num">1</span>
+              <span class="step-label">Learn</span>
+            </button>
+            <button class="journey-step-btn" role="tab" aria-selected="false" data-step="1" id="step-btn-1">
+              <span class="step-num">2</span>
+              <span class="step-label">Decide</span>
+            </button>
+            <button class="journey-step-btn" role="tab" aria-selected="false" data-step="2" id="step-btn-2">
+              <span class="step-num">3</span>
+              <span class="step-label">Participate</span>
+            </button>
+            <button class="journey-step-btn" role="tab" aria-selected="false" data-step="3" id="step-btn-3">
+              <span class="step-num">4</span>
+              <span class="step-label">Vote</span>
+            </button>
+            <button class="journey-step-btn" role="tab" aria-selected="false" data-step="4" id="step-btn-4">
+              <span class="step-num">5</span>
+              <span class="step-label">Count</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Step Content Card Display -->
+        <div class="journey-content-card glass-card" id="journey-content-card">
+          <div class="step-badge-indicator" id="step-badge">Phase 1 of 5</div>
+          <div class="step-grid">
+            <div class="step-text-col">
+              <h3 class="step-main-title" id="step-title">1. Learn: Explore Issues & Understand Community Needs</h3>
+              <p class="step-desc" id="step-desc">
+                Responsible participation begins with healthy curiosity. Review official voter information pamphlets, understand key ballot measures, and research how different candidates plan to address local challenges such as infrastructure, education, safety, and public health.
+              </p>
+              
+              <div class="step-checklist" id="step-checklist">
+                <!-- Injected dynamically via JS -->
+              </div>
+            </div>
+            
+            <div class="step-graphic-col">
+              <div class="step-graphic-box" id="step-graphic-box">
+                <!-- Dynamic Illustration SVG in JS -->
+              </div>
+              <div class="step-action-hint" id="step-hint">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="12" y1="16" x2="12" y2="12"></line>
+                  <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <span id="step-tip-text">Pro-Tip: Bookmark official non-partisan voter portals before election week.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stepper Navigation Controls -->
+          <div class="step-nav-footer">
+            <button class="btn btn-secondary btn-sm" id="prev-step-btn" disabled>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"></polyline></svg>
+              <span>Previous Step</span>
+            </button>
+            <div class="step-counter-dots" id="step-counter-dots">
+              <span class="step-dot active"></span>
+              <span class="step-dot"></span>
+              <span class="step-dot"></span>
+              <span class="step-dot"></span>
+              <span class="step-dot"></span>
+            </div>
+            <button class="btn btn-primary btn-sm" id="next-step-btn">
+              <span>Next: Decide</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 4. THINK BEFORE YOU VOTE (Informed Decision Making)              -->
+    <!-- ================================================================= -->
+    <section id="think-before" class="section think-before-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="badge-icon">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <span>Informed Decision Making</span>
+          </div>
+          <h2 class="section-title">Think Before You Vote</h2>
+          <p class="section-subtitle">
+            An informed vote is a powerful vote. In an era of non-stop social media buzz, deliberate fact-checking and independent thinking are vital civic skills.
+          </p>
+        </div>
+
+        <div class="think-grid">
+          <!-- 5 Core Think Pillars -->
+          <div class="think-cards-col">
+            <div class="think-pillar-card glass-card">
+              <div class="pillar-icon bg-sapphire">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+              </div>
+              <div class="pillar-text">
+                <h4>1. Check Reliable Sources</h4>
+                <p>Read primary documents, official manifestos, and verified non-partisan election commission guidelines rather than hearsay.</p>
+              </div>
+            </div>
+
+            <div class="think-pillar-card glass-card">
+              <div class="pillar-icon bg-cyan">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+              </div>
+              <div class="pillar-text">
+                <h4>2. Understand Critical Issues</h4>
+                <p>Focus on concrete policy proposals for healthcare, education, economy, and public infrastructure that directly impact your community.</p>
+              </div>
+            </div>
+
+            <div class="think-pillar-card glass-card">
+              <div class="pillar-icon bg-purple">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                  <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                </svg>
+              </div>
+              <div class="pillar-text">
+                <h4>3. Compare Plans Objectively</h4>
+                <p>Weigh long-term sustainable plans against short-term promises. Analyze track records, feasibility, and measurable commitments.</p>
+              </div>
+            </div>
+
+            <div class="think-pillar-card glass-card">
+              <div class="pillar-icon bg-emerald">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  <line x1="12" y1="8" x2="12" y2="12"></line>
+                  <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+              </div>
+              <div class="pillar-text">
+                <h4>4. Avoid Rumors & Misinformation</h4>
+                <p>Be vigilant against sensationalized headlines, unverified viral clips, and fear-based claims. Verify before resharing.</p>
+              </div>
+            </div>
+
+            <div class="think-pillar-card glass-card">
+              <div class="pillar-icon bg-amber">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                  <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                  <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                </svg>
+              </div>
+              <div class="pillar-text">
+                <h4>5. Make Your Own Independent Choice</h4>
+                <p>Your vote is confidential and uniquely yours. Make your decision based on your values and discernment, free from social pressure.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Fact vs. Emotion Evaluation Widget -->
+          <div class="think-interactive-col">
+            <div class="glass-card evaluation-widget">
+              <div class="widget-header">
+                <div class="widget-badge">Interactive Civic Tool</div>
+                <h3>Information Evaluation Checklist</h3>
+                <p class="text-sm">Before believing or sharing election-related claims, run through this 4-point verification check:</p>
+              </div>
+
+              <div class="eval-checklist">
+                <label class="eval-item">
+                  <input type="checkbox" class="eval-check" data-id="1">
+                  <div class="eval-box">
+                    <span class="check-indicator"></span>
+                    <div class="eval-content">
+                      <strong>Is the primary source clearly cited?</strong>
+                      <span class="eval-sub">Official records, legislative votes, or published budgets.</span>
+                    </div>
+                  </div>
+                </label>
+
+                <label class="eval-item">
+                  <input type="checkbox" class="eval-check" data-id="2">
+                  <div class="eval-box">
+                    <span class="check-indicator"></span>
+                    <div class="eval-content">
+                      <strong>Is multiple independent verification available?</strong>
+                      <span class="eval-sub">Confirmed by more than one reputable, non-partisan source.</span>
+                    </div>
+                  </div>
+                </label>
+
+                <label class="eval-item">
+                  <input type="checkbox" class="eval-check" data-id="3">
+                  <div class="eval-box">
+                    <span class="check-indicator"></span>
+                    <div class="eval-content">
+                      <strong>Is the tone objective rather than provocative?</strong>
+                      <span class="eval-sub">Free from extreme emotional outrage or manipulative buzzwords.</span>
+                    </div>
+                  </div>
+                </label>
+
+                <label class="eval-item">
+                  <input type="checkbox" class="eval-check" data-id="4">
+                  <div class="eval-box">
+                    <span class="check-indicator"></span>
+                    <div class="eval-content">
+                      <strong>Does the claim align with verified facts?</strong>
+                      <span class="eval-sub">Cross-checked against actual historical records and statistics.</span>
+                    </div>
+                  </div>
+                </label>
+              </div>
+
+              <div class="eval-feedback" id="eval-feedback">
+                <div class="eval-status-bar">
+                  <div class="eval-status-fill" id="eval-status-fill" style="width: 0%;"></div>
+                </div>
+                <p class="eval-status-text" id="eval-status-text">Select verification steps above to evaluate information reliability.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 5. BEAT VOTER APATHY (Interactive Mythbuster)                    -->
+    <!-- ================================================================= -->
+    <section id="beat-apathy" class="section beat-apathy-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="badge-icon">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+            <span>Overcoming Common Hesitations</span>
+          </div>
+          <h2 class="section-title">Beat Voter Apathy</h2>
+          <p class="section-subtitle">
+            Ever wondered if casting your ballot truly matters? Explore common hesitations below and see why responsible participation makes all the difference.
+          </p>
+        </div>
+
+        <!-- Interactive Apathy Selector Tabs -->
+        <div class="apathy-tabs-wrapper">
+          <div class="apathy-tabs" role="tablist" aria-label="Apathy Questions">
+            <button class="apathy-tab-btn active" role="tab" aria-selected="true" data-apathy="0" id="apathy-tab-0">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <span>“My one vote won't matter”</span>
+            </button>
+            <button class="apathy-tab-btn" role="tab" aria-selected="false" data-apathy="1" id="apathy-tab-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+              </svg>
+              <span>“I don't know enough”</span>
+            </button>
+            <button class="apathy-tab-btn" role="tab" aria-selected="false" data-apathy="2" id="apathy-tab-2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              <span>“Voting takes too much effort”</span>
+            </button>
+            <button class="apathy-tab-btn" role="tab" aria-selected="false" data-apathy="3" id="apathy-tab-3">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+              </svg>
+              <span>“Nothing ever changes anyway”</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Dynamic Apathy Response Card -->
+        <div class="apathy-response-card glass-card" id="apathy-card">
+          <div class="apathy-card-glow" aria-hidden="true"></div>
+          <div class="apathy-card-grid">
+            <div class="apathy-myth-box">
+              <span class="myth-tag">Common Hesitation</span>
+              <h3 class="myth-title" id="apathy-myth-title">“My one vote won't make any difference in a large election.”</h3>
+              <div class="myth-quote-mark">“</div>
+            </div>
+
+            <div class="apathy-fact-box">
+              <span class="fact-tag">The Civic Reality</span>
+              <h4 class="fact-title" id="apathy-fact-title">Elections are regularly decided by a razor-thin margin of votes.</h4>
+              <p class="fact-desc" id="apathy-fact-desc">
+                Across history and in local municipalities, critical town council seats, school board budgets, and regional referendums have been decided by fewer than a dozen votes—sometimes even a single vote! Moreover, an election outcome is simply the sum of millions of individual decisions. When thousands say "my vote doesn't matter," democracy loses its voice.
+              </p>
+              
+              <div class="apathy-key-takeaway" id="apathy-takeaway">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <span id="apathy-takeaway-text"><strong>Key Insight:</strong> When you vote, you guarantee your perspective is counted in the official record.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 6. VOTER AWARENESS CHALLENGE (Interactive Mini-Quiz)              -->
+    <!-- ================================================================= -->
+    <section id="voter-quiz" class="section voter-quiz-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="badge-icon">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="10 8 16 12 10 16 10 8"></polygon>
+            </svg>
+            <span>Interactive Mini-Quiz</span>
+          </div>
+          <h2 class="section-title">Voter Awareness Challenge</h2>
+          <p class="section-subtitle">
+            How well do you know your civic rights, discerning information, and responsible participation? Test your knowledge with this quick 5-question challenge!
+          </p>
+        </div>
+
+        <!-- Quiz Container -->
+        <div class="quiz-container glass-card" id="quiz-wrapper">
+          <!-- Quiz Header: Question count & Progress Bar -->
+          <div class="quiz-header">
+            <div class="quiz-meta">
+              <span class="quiz-question-index" id="quiz-q-index">Question 1 of 5</span>
+              <span class="quiz-score-badge" id="quiz-current-score">Score: 0 / 5</span>
+            </div>
+            <div class="quiz-progress-bar">
+              <div class="quiz-progress-fill" id="quiz-progress-fill" style="width: 20%;"></div>
+            </div>
+          </div>
+
+          <!-- Active Question Box -->
+          <div class="quiz-question-box" id="quiz-question-box">
+            <h3 class="quiz-question-text" id="quiz-question-text">
+              Loading question...
+            </h3>
+
+            <!-- Multiple Choice Options -->
+            <div class="quiz-options-list" id="quiz-options-list" role="radiogroup" aria-label="Question Options">
+              <!-- Dynamically populated options -->
+            </div>
+
+            <!-- Instant Educational Explanation (Revealed after selection) -->
+            <div class="quiz-feedback-box hidden" id="quiz-feedback-box">
+              <div class="feedback-header">
+                <span class="feedback-icon" id="feedback-icon">✓</span>
+                <strong class="feedback-title" id="feedback-title">Correct!</strong>
+              </div>
+              <p class="feedback-text" id="feedback-text">
+                Explanation of the civic principle will appear here.
+              </p>
+            </div>
+          </div>
+
+          <!-- Quiz Action Buttons -->
+          <div class="quiz-footer">
+            <button class="btn btn-secondary btn-sm" id="quiz-hint-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              <span>Civic Hint</span>
+            </button>
+            <div class="hint-popup hidden" id="quiz-hint-popup">
+              <span id="quiz-hint-text">Remember: A healthy democracy relies on verified facts and equal participation.</span>
+            </div>
+            <button class="btn btn-primary" id="quiz-next-btn" disabled>
+              <span>Next Question</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+
+          <!-- Final Result Card (Hidden initially) -->
+          <div class="quiz-result-view hidden" id="quiz-result-view">
+            <div class="result-badge-circle" id="result-badge-circle">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="trophy-svg">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+                <path d="M4 22h16"></path>
+                <path d="M10 14.66V17c0 .55-.45 1-1 1H7c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1h10c.55 0 1-.45 1-1v-1c0-.55-.45-1-1-1h-2c-.55 0-1-.45-1-1v-2.34"></path>
+                <path d="M18 4H6a2 2 0 0 0-2 2v3a8 8 0 0 0 16 0V6a2 2 0 0 0-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="result-title" id="result-title">Civic Champion!</h3>
+            <p class="result-score-text" id="result-score-text">You scored 5 out of 5 (100%)</p>
+            <p class="result-message" id="result-message">
+              Outstanding! You have a profound understanding of responsible voting, independent decision-making, and democratic participation.
+            </p>
+            <div class="result-actions">
+              <button class="btn btn-secondary" id="quiz-retake-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+                <span>Retake Quiz</span>
+              </button>
+              <a href="#civic-pledge" class="btn btn-primary" id="quiz-pledge-cta">
+                <span>Take Civic Pledge Now</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 7. MY VOTE, MY RESPONSIBILITY (Interactive Civic Pledge)         -->
+    <!-- ================================================================= -->
+    <section id="civic-pledge" class="section civic-pledge-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="badge-pill">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="badge-icon">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>Personal Civic Commitment</span>
+          </div>
+          <h2 class="section-title">My Vote, My Responsibility</h2>
+          <p class="section-subtitle">
+            Democracy thrives on informed and responsible citizens. Check each commitment below to unlock your official digital Civic Responsibility Certificate.
+          </p>
+        </div>
+
+        <div class="pledge-grid">
+          <!-- Checklist Items -->
+          <div class="pledge-checklist-col">
+            <div class="pledge-items-list" id="pledge-items-list">
+              <!-- Item 1 -->
+              <label class="pledge-checkbox-card glass-card hover-lift" for="pledge-check-1">
+                <input type="checkbox" id="pledge-check-1" class="pledge-checkbox" data-index="1">
+                <span class="custom-check-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <div class="pledge-text-wrap">
+                  <strong class="pledge-title">I will verify election information</strong>
+                  <p class="pledge-sub">I will consult official guidelines and reliable fact-checkers before believing or sharing claims.</p>
+                </div>
+              </label>
+
+              <!-- Item 2 -->
+              <label class="pledge-checkbox-card glass-card hover-lift" for="pledge-check-2">
+                <input type="checkbox" id="pledge-check-2" class="pledge-checkbox" data-index="2">
+                <span class="custom-check-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <div class="pledge-text-wrap">
+                  <strong class="pledge-title">I will think carefully & independently</strong>
+                  <p class="pledge-sub">I will evaluate policies based on community impact and my core values without yielding to peer pressure.</p>
+                </div>
+              </label>
+
+              <!-- Item 3 -->
+              <label class="pledge-checkbox-card glass-card hover-lift" for="pledge-check-3">
+                <input type="checkbox" id="pledge-check-3" class="pledge-checkbox" data-index="3">
+                <span class="custom-check-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <div class="pledge-text-wrap">
+                  <strong class="pledge-title">I will respect differing democratic viewpoints</strong>
+                  <p class="pledge-sub">I recognize that peaceful diversity of thought strengthens our collective democratic fabric.</p>
+                </div>
+              </label>
+
+              <!-- Item 4 -->
+              <label class="pledge-checkbox-card glass-card hover-lift" for="pledge-check-4">
+                <input type="checkbox" id="pledge-check-4" class="pledge-checkbox" data-index="4">
+                <span class="custom-check-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <div class="pledge-text-wrap">
+                  <strong class="pledge-title">I will participate actively on election day</strong>
+                  <p class="pledge-sub">I will plan my polling schedule ahead of time and exercise my constitutionally protected vote.</p>
+                </div>
+              </label>
+
+              <!-- Item 5 -->
+              <label class="pledge-checkbox-card glass-card hover-lift" for="pledge-check-5">
+                <input type="checkbox" id="pledge-check-5" class="pledge-checkbox" data-index="5">
+                <span class="custom-check-box">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <div class="pledge-text-wrap">
+                  <strong class="pledge-title">I will encourage others to participate responsibly</strong>
+                  <p class="pledge-sub">I will inspire friends, family, and peers to register, research, and cast their informed ballots.</p>
+                </div>
+              </label>
+            </div>
+
+            <!-- Quick Select All Button -->
+            <div class="pledge-quick-actions">
+              <button class="btn btn-outline btn-sm" id="pledge-all-btn">
+                <span>Select All 5 Commitments</span>
+              </button>
+              <button class="btn btn-outline btn-sm" id="pledge-reset-btn">
+                <span>Reset</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Pledge Progress & Certificate Generator -->
+          <div class="pledge-status-col">
+            <div class="glass-card pledge-card-generator">
+              <!-- Radial Progress Indicator -->
+              <div class="progress-radial-wrapper">
+                <svg class="progress-radial-svg" viewBox="0 0 120 120">
+                  <circle class="radial-bg" cx="60" cy="60" r="50"></circle>
+                  <circle class="radial-progress" id="pledge-radial-bar" cx="60" cy="60" r="50" style="stroke-dashoffset: 314;"></circle>
+                </svg>
+                <div class="radial-center-text">
+                  <span class="radial-percent" id="pledge-percent-text">0%</span>
+                  <span class="radial-sub">Completed</span>
+                </div>
+              </div>
+
+              <!-- Name Input for Certificate Customization -->
+              <div class="pledge-name-group">
+                <label for="pledge-user-name" class="input-label">Enter Your Name for Citizen Badge</label>
+                <div class="input-wrapper">
+                  <input type="text" id="pledge-user-name" class="text-input" placeholder="e.g. Alex Morgan" maxlength="32">
+                </div>
+              </div>
+
+              <!-- Digital Certificate / Badge Preview -->
+              <div class="certificate-preview" id="certificate-preview">
+                <div class="cert-watermark" aria-hidden="true">CIVIC</div>
+                <div class="cert-header">
+                  <span class="cert-badge-tag">Civic Responsibility Certificate</span>
+                  <svg class="cert-seal-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 14 14"></polyline>
+                  </svg>
+                </div>
+                <h4 class="cert-holder-name" id="cert-display-name">Responsible Citizen</h4>
+                <p class="cert-statement">
+                  Has pledged to verify facts, think independently, and actively participate in democratic elections.
+                </p>
+                <div class="cert-footer">
+                  <span class="cert-date" id="cert-date">Issued: Today</span>
+                  <span class="cert-status" id="cert-status-badge">Locked (0/5)</span>
+                </div>
+              </div>
+
+              <!-- Certificate Action Buttons -->
+              <div class="cert-actions">
+                <button class="btn btn-primary btn-block" id="pledge-unlock-btn" disabled>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  <span>Download / Share Badge</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- 8. FINAL CALL TO ACTION & CIVIC TOOLKIT                          -->
+    <!-- ================================================================= -->
+    <section id="final-cta" class="section final-cta-section">
+      <div class="container">
+        <div class="cta-glass-banner glass-card text-center">
+          <div class="cta-glow" aria-hidden="true"></div>
+          
+          <div class="badge-pill mb-4">
+            <span class="badge-dot"></span>
+            <span>The Power is in Your Hands</span>
+          </div>
+
+          <h2 class="cta-headline">
+            Be Informed. Be Responsible.<br>
+            <span class="text-gradient">Make Your Voice Count.</span>
+          </h2>
+
+          <p class="cta-desc">
+            A vibrant, fair, and thriving democracy depends on the voice of every single eligible citizen. 
+            Commit today to participate with knowledge, conviction, and pride.
+          </p>
+
+          <div class="cta-buttons-wrap">
+            <!-- Calendar Reminder Trigger (.ics Generator) -->
+            <button class="btn btn-lg btn-primary btn-glow" id="calendar-reminder-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <span>Add Election Reminder to Calendar</span>
+            </button>
+
+            <!-- Share Platform Button -->
+            <button class="btn btn-lg btn-secondary" id="share-platform-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="18" cy="5" r="3"></circle>
+                <circle cx="6" cy="12" r="3"></circle>
+                <circle cx="18" cy="19" r="3"></circle>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+              </svg>
+              <span>Share Civic Awareness</span>
+            </button>
+          </div>
+
+          <!-- Neutrality Guarantee Disclaimer -->
+          <div class="neutrality-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+            <span>CivicPulse is an independent, non-partisan voter education initiative. We do not endorse, support, or oppose any candidate, political party, or ideology.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =================================================================== -->
+  <!-- SHARE & NOTIFICATION MODAL                                         -->
+  <!-- =================================================================== -->
+  <div class="modal-overlay hidden" id="share-modal" role="dialog" aria-modal="true" aria-labelledby="share-modal-title">
+    <div class="modal-card glass-card">
+      <div class="modal-header">
+        <h3 id="share-modal-title" class="modal-title">Share Civic Awareness</h3>
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-sub">
+          Help build a stronger democracy by encouraging your friends and family to stay informed and vote responsibly.
+        </p>
+
+        <div class="share-box">
+          <textarea id="share-text-input" class="share-textarea" readonly>I just took the Civic Responsibility Pledge at CivicPulse! Remember: Your Vote. Your Voice. Your Future. Stay informed and participate responsibly. 🗳️✨</textarea>
+          <button class="btn btn-primary btn-sm btn-block mt-2" id="copy-share-text-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>Copy Text to Clipboard</span>
+          </button>
+        </div>
+
+        <div class="share-social-grid mt-4">
+          <a href="https://twitter.com/intent/tweet?text=Your%20Vote.%20Your%20Voice.%20Your%20Future.%20Check%20out%20CivicPulse%20and%20take%20the%20responsible%20voter%20pledge!%20%F0%9F%97%B3%EF%B8%8F" target="_blank" rel="noopener noreferrer" class="social-share-btn btn-twitter">
+            Share on X / Twitter
+          </a>
+          <a href="https://wa.me/?text=Your%20Vote%20Matters!%20Take%20the%20Civic%20Responsibility%20Pledge%20at%20CivicPulse%20and%20make%20your%20voice%20count.%20%F0%9F%97%B3%EF%B8%8F" target="_blank" rel="noopener noreferrer" class="social-share-btn btn-whatsapp">
+            Share via WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification System -->
+  <div class="toast-notification hidden" id="toast-notification" role="status" aria-live="polite">
+    <svg class="toast-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>
+    <span class="toast-msg" id="toast-msg">Action completed!</span>
+  </div>
+
+  <!-- =================================================================== -->
+  <!-- FOOTER                                                              -->
+  <!-- =================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="logo-icon-wrap">
+              <svg class="logo-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/>
+              </svg>
+            </div>
+            <span class="brand-title">CivicPulse</span>
+          </div>
+          <p class="footer-mission">
+            Dedicated to fostering an informed, engaged, and responsible electorate through accessible civic education and neutral awareness tools.
+          </p>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="#why-vote">Why Voting Matters</a></li>
+            <li><a href="#voter-journey">The 5-Step Journey</a></li>
+            <li><a href="#think-before">Fact-Checking & Discernment</a></li>
+            <li><a href="#beat-apathy">Overcoming Apathy</a></li>
+            <li><a href="#voter-quiz">Voter Awareness Challenge</a></li>
+            <li><a href="#civic-pledge">Citizen Pledge</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4 class="footer-col-title">Civic Principles</h4>
+          <ul class="footer-links-list">
+            <li><span class="footer-static-item">100% Non-Partisan Integrity</span></li>
+            <li><span class="footer-static-item">Equal Democratic Representation</span></li>
+            <li><span class="footer-static-item">Constitutional Secret Ballot</span></li>
+            <li><span class="footer-static-item">Informed & Peaceful Civic Action</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">
+          &copy; <span id="current-year"></span> CivicPulse Initiative. Built for civic empowerment and public awareness. 100% Politically Neutral.
+        </p>
+        <div class="footer-bottom-badges">
+          <span class="footer-tag">Non-Commercial</span>
+          <span class="footer-tag">Open Educational Resource</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="app.js"></script>
+</body>
+</html>
